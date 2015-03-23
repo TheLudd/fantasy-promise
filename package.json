@@ -1,0 +1,21 @@
+{
+  "name": "fantasy-promise",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^2.1.2",
+    "coffee-script": "^1.9.1",
+    "mocha": "^2.2.1",
+    "mocha-gwt": "^0.1.13",
+    "ramda": "^0.13.0"
+  }
+}

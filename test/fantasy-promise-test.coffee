@@ -38,6 +38,18 @@ describe 'FantasyPromise', ->
     When -> liftA2(R.add, @subject, @promise2).then (@result) =>
     Then -> @result == 12
 
+  describe '#fork', ->
+
+    describe '- error case', ->
+      When ->
+        @errorFuture = FantasyPromise.of Promise.reject new Error 'someError'
+        @errorFuture.fork (@result) =>
+      Then -> @result.message == 'someError'
+
+    describe '- success case', ->
+      When -> @subject.fork null, (@result) =>
+      Then -> @result == 5
+
   describe 'common promise lib test', ->
     promises = R.times makePromise, 11
 
